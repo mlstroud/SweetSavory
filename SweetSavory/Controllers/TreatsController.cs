@@ -37,7 +37,7 @@ namespace SweetSavory.Controllers
         _db.FlavorTreat.Add(new FlavorTreat() { TreatId = treat.TreatId, FlavorId = flavorId });
       }
       _db.SaveChanges();
-      return View();
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Details(int id)
