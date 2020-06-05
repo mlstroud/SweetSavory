@@ -19,15 +19,18 @@
           </div>
         </div>
         <div class="panel-body">
-          @Html.HiddenFor(model => model.FlavorId)
+          @using(Html.BeginForm())
+          {
+            @Html.HiddenFor(model => model.FlavorId)
 
-          @Html.LabelFor(model => model.Name)
-          @Html.EditorFor(model => model.Name)
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
 
-          @Html.Label("Select Treat")
-          @Html.DropDownList("TreatId")
+            @Html.Label("Select Treat")
+            @Html.DropDownList("TreatId")
 
-          <input type="submit" class="btn btn-primary" value="Save">
+            <input type="submit" class="btn btn-primary" value="Save">
+          }
         </div>
       </div>
     }
