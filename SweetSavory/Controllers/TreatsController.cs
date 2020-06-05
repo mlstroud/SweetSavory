@@ -22,12 +22,14 @@ namespace SweetSavory.Controllers
       _db = db;
     }
 
+    [Authorize]
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult Create(Treat treat, int flavorId)
     {
@@ -50,6 +52,7 @@ namespace SweetSavory.Controllers
       return View(thisTreat);
     }
 
+    [Authorize]
     public ActionResult Edit(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -57,6 +60,7 @@ namespace SweetSavory.Controllers
       return View(thisTreat);
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult Edit(Treat treat, int flavorId)
     {
@@ -69,6 +73,7 @@ namespace SweetSavory.Controllers
       return RedirectToAction("Index", "Home");
     }
 
+    [Authorize]
     public ActionResult AddFlavor(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -76,6 +81,7 @@ namespace SweetSavory.Controllers
       return View(thisTreat);
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult AddFlavor(Treat treat, int flavorId)
     {
@@ -87,12 +93,14 @@ namespace SweetSavory.Controllers
       return RedirectToAction("Index", "Home");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }
 
+    [Authorize]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
@@ -102,6 +110,7 @@ namespace SweetSavory.Controllers
       return RedirectToAction("Index", "Home");
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult DeleteFlavor(int joinId)
     {
