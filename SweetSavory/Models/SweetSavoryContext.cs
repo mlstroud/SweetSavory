@@ -5,9 +5,9 @@ namespace SweetSavory.Models
 {
   public class SweetSavoryContext : IdentityDbContext<ApplicationUser>
   {
-    // public virtual DbSet<Flavor> flavors { get; set; }
-    // public virtual DbSet<Treat> Treats { get; set; }
-    // public DbSet<FlavorTreat> FlavorTreat { get; set; }
+    public virtual DbSet<Flavor> Flavors { get; set; }
+    public virtual DbSet<Treat> Treats { get; set; }
+    public DbSet<FlavorTreat> FlavorTreat { get; set; }
 
     public SweetSavoryContext(DbContextOptions options) : base(options) { }
   }
