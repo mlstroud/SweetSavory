@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Flavor
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Add a Treat to @Model.Name</strong>
+        </div>
+      </div>
+      <div class="panel-body">
+        @using(Html.BeginForm())
+        {
+          @Html.HiddenFor(model => model.FlavorId)
+
+          @Html.Label("Select Treat")<br>
+          @Html.DropDownList("TreatId")<br><br>
+
+          <input type="submit" class="btn btn-primary" value="Add Treat">
+        }
+      </div>
+    </div>
+  </div>
+</div>
