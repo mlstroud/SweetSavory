@@ -5,55 +5,67 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h3>Flavors</h3>
-    <hr>
-    @if(User.Identity.IsAuthenticated)
-    {
-      <a href='@Url.Action("Create", "Flavors")'>
-        <button class="btn btn-primary">Add Flavor</button>
-      </a>
-      <hr>
-    }
-    @if(ViewBag.Flavors.Count == 0)
-    {
-      <p>There are no current flavors.</p>
-    }
-    else
-    {
-      <table class="table">
-        @foreach(Flavor flavor in ViewBag.Flavors)
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title"><strong>Flavors</strong></div>
+      </div>
+      <div class="panel-body">
+        @if(User.Identity.IsAuthenticated)
         {
-          <tr>
-            <td>@Html.ActionLink($"{@flavor.Name}", "Details", "Flavors", new {id = flavor.FlavorId})</td>
-          </tr>
+          <a href='@Url.Action("Create", "Flavors")'>
+            <button class="btn btn-primary">Add Flavor</button>
+          </a>
+          <hr>
         }
-      </table>
-    }
+        @if(ViewBag.Flavors.Count == 0)
+        {
+          <p>There are no current flavors.</p>
+        }
+        else
+        {
+          <table class="table">
+            @foreach(Flavor flavor in ViewBag.Flavors)
+            {
+              <tr>
+                <td>@Html.ActionLink($"{@flavor.Name}", "Details", "Flavors", new {id = flavor.FlavorId})</td>
+              </tr>
+            }
+          </table>
+        }
+      </div>
+    </div>
   </div>
   <div class="col-md-6">
-    <h3>Treats</h3>
-    <hr>
-    @if(User.Identity.IsAuthenticated)
-    {
-      <a href='@Url.Action("Create", "Treats")'>
-        <button class="btn btn-primary">Add Treat</button>
-      </a>
-      <hr>
-    }
-    @if(ViewBag.Treats.Count == 0)
-    {
-      <p>There are no current treats.</p>
-    }
-    else
-    {
-      <table class="table">
-        @foreach(Treat treat in ViewBag.Treats)
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Treats</strong>
+        </div>
+      </div>
+      <div class="panel-body">
+        @if(User.Identity.IsAuthenticated)
         {
-          <tr>
-            <td>@Html.ActionLink($"{@treat.Name}", "Details", "Treats", new {id = treat.TreatId})</td>
-          </tr>
+          <a href='@Url.Action("Create", "Treats")'>
+            <button class="btn btn-primary">Add Treat</button>
+          </a>
+          <hr>
         }
-      </table>
-    }
+        @if(ViewBag.Treats.Count == 0)
+        {
+          <p>There are no current treats.</p>
+        }
+        else
+        {
+          <table class="table">
+            @foreach(Treat treat in ViewBag.Treats)
+            {
+              <tr>
+                <td>@Html.ActionLink($"{@treat.Name}", "Details", "Treats", new {id = treat.TreatId})</td>
+              </tr>
+            }
+          </table>
+        }
+      </div>
+    </div>
   </div>
 </div>
