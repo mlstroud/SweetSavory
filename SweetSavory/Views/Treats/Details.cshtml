@@ -15,10 +15,14 @@
         <div class="panel-heading">
           <div class="panel-title">
             <strong>Treat: @Model.Name</strong>
+            <a href='@Url.Action("Edit", new {id = @Model.TreatId})'>
+              <button class="btn btn-warning">Edit</button>
+            </a>
           </div>
         </div>
         <div class="panel-body">
           <strong>Flavors for this treat</strong>
+          <hr>
           <ul>
             @foreach(var join in Model.Flavors)
             {
