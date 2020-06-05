@@ -7,11 +7,11 @@ namespace SweetSavory.Models
     public int FlavorId { get; set; }
     public string Name { get; set; }
 
-    public ICollection<FlavorTreat> FlavorTreats { get; set; }
+    public ICollection<FlavorTreat> Treats { get; }
 
     public Flavor()
     {
-      this.FlavorTreats = new HashSet<FlavorTreat>();
+      this.Treats = new HashSet<FlavorTreat>();
     }
   }
 }
