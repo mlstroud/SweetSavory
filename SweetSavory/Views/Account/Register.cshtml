@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+@using SweetSavory.ViewModels
+@model RegisterViewModel
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <strong>Register an Account</strong>
+        </div>
+      </div>
+      <div class="panel-body">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+          @Html.LabelFor(user => user.Email)<br>
+          @Html.TextBoxFor(user => user.Email)<br><br>
+
+          @Html.LabelFor(user => user.Password)<br>
+          @Html.PasswordFor(user => user.Password)<br><br>
+
+          @Html.LabelFor(user => user.ConfirmPassword)<br>
+          @Html.PasswordFor(user => user.ConfirmPassword)<br><br>
+          
+          <input type="submit" class="btn btn-primary" value="Register">
+        }
+      </div>
+    </div>
+  </div>
+</div>
