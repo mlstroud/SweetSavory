@@ -1,4 +1,13 @@
 @{
   Layout = "_Layout";
 }
-Test
+@using SweetSavory.Models
+
+@if(ViewBag.Flavors.Count == 0)
+{
+  <p>nothing here</p>
+}
+@foreach(Flavor flavor in ViewBag.Flavors)
+{
+  
+}
