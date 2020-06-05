@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Flavor
+<div class="row">
+  <div class="col-md-12">
+
+    <h3>Add Flavor</h3>
+    @using(Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Name)<br>
+      @Html.TextBoxFor(model => model.Name)<br><br>
+
+      <input type="submit" class="btn btn-primary" value="Add">
+    }
+  </div>
+</div>
