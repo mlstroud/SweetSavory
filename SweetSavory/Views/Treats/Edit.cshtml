@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Treat
+
+<div class="row">
+  <div class="col-md-12">
+    @if(@Model == null)
+    {
+      <p>Sorry, this is not a valid treat.</p>
+    }
+    else
+    {
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <strong>Editing Treat: @Model.Name</strong>
+          </div>
+        </div>
+        <div class="panel-body">
+          @Html.HiddenFor(model => model.TreatId)
+
+          @Html.LabelFor(model => model.Name)
+          @Html.EditorFor(model => model.Name)
+
+          @Html.Label("Select Flavor")
+          @Html.DropDownList("FlavorId")
+
+          <input type="submit" class="btn btn-primary" value="Save">
+        </div>
+      </div>
+    }
+  </div>
+</div>
