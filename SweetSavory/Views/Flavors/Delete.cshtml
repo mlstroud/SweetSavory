@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Flavor
+
+<div class="row">
+  <div class="col-md-12">
+    @if(@Model == null)
+    {
+      <p>Sorry, this is not a valid flavor.</p>
+    }
+    else
+    {
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <string>Delete Flavor: @Model.Name</string>
+          </div>
+        </div>
+        <div class="panel-body">
+          <p>Please confirm that you would like to delete @Model.Name</p>
+          <hr>
+          @using (Html.BeginForm())
+          {
+            <input type="submit" class="btn btn-danger" value="Delete">
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
