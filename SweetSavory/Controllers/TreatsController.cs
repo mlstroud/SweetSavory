@@ -28,6 +28,18 @@ namespace SweetSavory.Controllers
       return View();
     }
 
+    [HttpPost]
+    public ActionResult Create(Treat treat, int flavorId)
+    {
+      _db.Treats.Add(treat);
+      if (flavorId != 0)
+      {
+        _db.FlavorTreat.Add(new FlavorTreat() { TreatId = treat.TreatId, FlavorId = flavorId });
+      }
+      _db.SaveChanges();
+      return View();
+    }
+
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
