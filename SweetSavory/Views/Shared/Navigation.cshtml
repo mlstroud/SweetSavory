@@ -2,7 +2,10 @@
     <li role="presentation">@Html.ActionLink("Home", "Index", "Home")</li>
     @if(User.Identity.IsAuthenticated)
     {
-      <li role="presentation">@Html.ActionLink("Logout", "Logout", "Account")</li>
+      @using(Html.BeginForm("Logout", "Account"))
+      {
+        <input type="submit" class="btn btn-small btn-primary" value="Logout">
+      }
     }
     else
     {

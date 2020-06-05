@@ -10,6 +10,12 @@
         <h1>Pierre's Sweet and Savory Treats</h1>
       </div>
       @Html.Partial("Navigation")
+      @if(User.Identity.IsAuthenticated)
+      {
+        <div class="well">
+          Welcome, @User.Identity.Name.
+        </div>
+      }
       @RenderBody()
     </div>
   </body>
