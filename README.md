@@ -37,7 +37,26 @@ _After the user registers, they will have access to create, update, and delete t
 | Program will allow user to delete an existing flavor       | Visits /flavors/flavorId/delete  | Display confirmation button            |
 
 ### RESTful Routing
-
+| Path                     | Route          | Method |
+|:-------------------------|:---------------|-------:|
+| /                        | Home->Index    | GET    |
+| /Flavors/Create          | Flavors->Create | GET    |
+| /Flavors/Create          | Flavors->Create | POST    |
+| /Flavors/Details/{id}    | Flavors->Details | GET, POST   |
+| /Flavors/Edit/{id}      | Flavors->Edit  | GET, POST   |
+| /Flavors/Delete/{id}       | Flavors->Delete    | GET, POST   |
+| /Flavors/AddTreat/{id}         | Flavors->AddTreat | GET, POST |
+| /Flavors/DeleteTreat | Flavors->DeleteTreat | POST |
+| /Treats/Create          | Treats->Create | GET    |
+| /Treats/Create          | Treats->Create | POST    |
+| /Treats/Details/{id}    | Treats->Details | GET, POST   |
+| /Treats/Edit/{id}      | Treats->Edit  | GET, POST   |
+| /Treats/Delete/{id}       | Treats->Delete    | GET, POST   |
+| /Treats/AddFlavor/{id}         | Treats->AddFlavor| GET, POST |
+| /Treats/DeleteFlavor | Treats->DeleteFlavor | POST |
+| /Account/Register    | Accounts->Register | GET, POST |
+| /Account/Login       | Accounts->Login    | GET, POST |
+| /Account/Logout      |Account -> Logout   | POST |
 
 ### Stretch Goals
 
