@@ -59,6 +59,8 @@ _After the user registers, they will have access to create, update, and delete t
 | /Account/Logout      |Account -> Logout   | POST |
 
 ### Stretch Goals
+* Add User Role based functionality.
+* Add Order form for logged in users.
 
 ## Setup/Installation Requirements
 > This application requires the .NETCore SDK - [Find your version here](https://dotnet.microsoft.com/download/dotnet-core/2.2)
@@ -80,13 +82,35 @@ git clone https://github.com/mlstroud/SweetSavory.git
 CREATE DATABASE `matt_stroud`;
 
 USE `matt_stroud`;
-
 ```
-5. Run the application with the following command:
+5. Navigate to SweetSavory subdirectory and create appsettings.json
+```
+touch appsettings.json
+```
+6. Paste the following text into your appsettings.json file.
+```
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=matt_stroud;uid=YOURUSERNAMEHERE;pwd=YOURPASSWORDHERE;"
+  }
+}
+```
+>NOTE: Replace the username and password with your own.
+>If you choose to use your own database, update the value here and run the following MySQL commands:
+```
+DROP DATABASE `matt_stroud`;
+CREATE DATABASE `YOUR_DATABASE_HERE`;
+USE `YOUR_DATABASE_HERE`;
+```
+7. Apply database migrations.
+```
+dotnet ef database update
+```
+8. Run the application with the following command:
 ```
 dotnet run
 ```
-6. Open URL in browser:
+9. Open URL in browser:
 ```
 http://localhost:5000/
 ```
