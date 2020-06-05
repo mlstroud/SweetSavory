@@ -70,5 +70,16 @@ namespace SweetSavory.Controllers
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
       return View(thisFlavor);
     }
+
+    [HttpPost]
+    public ActionResult AddTreat(Flavor flavor, int treatId)
+    {
+      if (treatId != 0)
+      {
+        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = flavor.FlavorId, TreatId = treatId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index", "Home");
+    }
   }
 }
