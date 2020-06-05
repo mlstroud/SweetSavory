@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Treat
+<div class="row">
+  <div class="col-md-12">
+    @if(@Model == null)
+    {
+      <p>Sorry, this is not a valid treat.</p>
+    }
+    else
+    {
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <strong>Treat: @Model.Name</strong>
+          </div>
+        </div>
+        <div class="panel-body">
+          <strong>Flavors for this treat</strong>
+          <ul>
+            @foreach(Flavor flavor in @Model.Flavors)
+            {
+              <li>@flavor.Name</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>
