@@ -37,19 +37,7 @@ _After the user registers, they will have access to create, update, and delete t
 | Program will allow user to delete an existing flavor       | Visits /flavors/flavorId/delete  | Display confirmation button            |
 
 ### RESTful Routing
-| Path                     | Route          | Method |
-|:-------------------------|:---------------|-------:|
-| /                        | Home->Index    | GET    |
-| /Treats                  | Treats->Index  | GET    |
-| /Treats/Create         | Stylists->Create | GET    |
-| /Stylists/Create           | Stylists->Create | POST   |
-| /Stylists/Details/{id}   | Stylists->Details  | GET    |
-| /Stylists/Edit/{id}     | Stylists->Edit  | GET    |
-| /Clients                | Clients->Index    | GET    |
-| /Clients/Create     | Clients->Create | GET   |
-| /Clients/Create     | Clients->Create | POST |
-| /Clients/Details/{id} | Clients->Details | GET |
-| /Clients/Edit/{id} | Clients->Edit | GET
+
 
 ### Stretch Goals
 
