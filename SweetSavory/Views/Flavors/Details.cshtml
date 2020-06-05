@@ -27,12 +27,25 @@
         <div class="panel-body">
           <strong>Treats with this flavor</strong>
           <hr>
-          <ul>
+          <table class="table">
+            <tr>
+              <th>Treat</th>
+              <th></th>
+            </tr>
             @foreach(var join in Model.Treats)
             {
-              <li>@Html.ActionLink($"{join.Treat.Name}", "Details", "Treats", new {id = join.Treat.TreatId})</li>
+              <tr>
+                <td>@Html.ActionLink($"{join.Treat.Name}", "Details", "Treats", new {id = join.Treat.TreatId})</td>
+                <td>
+                  @using (Html.BeginForm("DeleteTreat", "Flavors"))
+                  {
+                    @Html.Hidden("joinId", @join.FlavorTreatId)
+                    <input type="submit" class="btn btn-danger" value="Delete Treat">
+                  }
+                </td>
+              </tr>
             }
-          </ul>
+          </table>
         </div>
       </div>
     }
