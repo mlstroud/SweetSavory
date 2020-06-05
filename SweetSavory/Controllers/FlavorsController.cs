@@ -57,8 +57,12 @@ namespace SweetSavory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit(Flavor flavor)
+    public ActionResult Edit(Flavor flavor, int treatId)
     {
+      if (treatId != 0)
+      {
+        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = flavor.FlavorId, TreatId = treatId });
+      }
       _db.Entry(flavor).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index", "Home");
@@ -78,6 +82,21 @@ namespace SweetSavory.Controllers
       {
         _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = flavor.FlavorId, TreatId = treatId });
       }
+      _db.SaveChanges();
+      return RedirectToAction("Index", "Home");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      _db.Flavors.Remove(thisFlavor);
       _db.SaveChanges();
       return RedirectToAction("Index", "Home");
     }
