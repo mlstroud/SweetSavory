@@ -22,7 +22,7 @@
           <ul>
             @foreach(var join in Model.Flavors)
             {
-              <li>@join.Flavor.Name</li>
+              <li>@Html.ActionLink($"{join.Flavor.Name}", "Details", "Flavors", new {id = join.Flavor.FlavorId})</li>
             }
           </ul>
         </div>
