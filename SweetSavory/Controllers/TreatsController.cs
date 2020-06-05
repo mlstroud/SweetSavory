@@ -24,6 +24,7 @@ namespace SweetSavory.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
   }
