@@ -17,12 +17,14 @@
     }
     else
     {
-      <ul>
-      @foreach(Flavor flavor in ViewBag.Flavors)
-      {
-        <li>@Html.ActionLink($"{@flavor.Name}", "Details", "Flavors", new {id = flavor.FlavorId})</li>
-      }
-      </ul>
+      <table class="table">
+        @foreach(Flavor flavor in ViewBag.Flavors)
+        {
+          <tr>
+            <td>@Html.ActionLink($"{@flavor.Name}", "Details", "Flavors", new {id = flavor.FlavorId})</td>
+          </tr>
+        }
+      </table>
     }
   </div>
   <div class="col-md-6">
@@ -38,12 +40,14 @@
     }
     else
     {
-      <ul>
-      @foreach(Treat treat in ViewBag.Treats)
-      {
-        <li>@Html.ActionLink($"{@treat.Name}", "Details", "Treats", new {id = treat.TreatId})</li>
-      }
-      </ul>
+      <table class="table">
+        @foreach(Treat treat in ViewBag.Treats)
+        {
+          <tr>
+            <td>@Html.ActionLink($"{@treat.Name}", "Details", "Treats", new {id = treat.TreatId})</td>
+          </tr>
+        }
+      </table>
     }
   </div>
 </div>
