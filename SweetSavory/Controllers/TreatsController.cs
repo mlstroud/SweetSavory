@@ -65,7 +65,7 @@ namespace SweetSavory.Controllers
       return RedirectToAction("Index", "Home");
     }
 
-    public ActionResult AddTreat(int id)
+    public ActionResult AddFlavor(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
@@ -73,7 +73,7 @@ namespace SweetSavory.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddTreat(Treat treat, int flavorId)
+    public ActionResult AddFlavor(Treat treat, int flavorId)
     {
       if (flavorId != 0)
       {
