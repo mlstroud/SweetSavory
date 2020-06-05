@@ -1,5 +1,12 @@
   <ul class="nav nav-tabs" class="nav">
     <li role="presentation">@Html.ActionLink("Home", "Index", "Home")</li>
-    <li role="presentation">@Html.ActionLink("Login", "Login", "Account")</li>
-    <li role="presentation">@Html.ActionLink("Register", "Register", "Account")</li>
+    @if(User.Identity.IsAuthenticated)
+    {
+      <li role="presentation">@Html.ActionLink("Logout", "Logout", "Account")</li>
+    }
+    else
+    {
+      <li role="presentation">@Html.ActionLink("Login", "Login", "Account")</li>
+      <li role="presentation">@Html.ActionLink("Register", "Register", "Account")</li>
+    }
   </ul>
