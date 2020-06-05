@@ -19,11 +19,6 @@ namespace SweetSavory.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
-    {
-      return View();
-    }
-
     public ActionResult Register()
     {
       return View();
