@@ -20,9 +20,9 @@
         <div class="panel-body">
           <strong>Treats with this flavor</strong>
           <ul>
-            @foreach(Treat treat in @Model.Treats)
+            @foreach(var join in Model.Treats)
             {
-              <li>@treat.Name</li>
+              <li>@join.Treat.Name</li>
             }
           </ul>
         </div>
